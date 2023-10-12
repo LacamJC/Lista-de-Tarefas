@@ -1,0 +1,146 @@
+:root
+{
+    --cor1 : ;
+}
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteudo
+{
+    border: 1px solid black ;
+
+    width: 400px;
+    margin: 50px auto ;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+h1
+{
+    font-size: 1.6em;
+    margin: 10px 0px;
+}
+
+.lista
+{
+    /* min-width: 400px; */
+    padding: 10px;
+
+    min-height: 200px;
+
+    margin: 10px 0px;
+}
+
+.item
+{
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    height: 75px;
+    
+    margin: 20px auto;
+
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+
+
+    position: relative;
+    opacity: 1;
+    transition: opacity 1s;
+
+}
+
+.concluido
+{
+    opacity: 0;
+}
+
+.item .texto
+{
+    font-weight: 400;
+    font-size: 0.9em;
+    flex-wrap: wrap;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    margin: 10px;
+    color: black;
+    word-wrap: break-word;
+    width: 300px;
+}
+
+#tarefaDesc
+{
+    font-size: 0.9em;
+    padding: 10px;
+    height: 50px;
+    margin: 10px 0px;
+    border: 1px solid black;
+
+    resize: none;
+}
+
+.criarTarefa
+{
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0px;
+
+    transition: ease 0.5s;
+}
+
+.criarTarefa:hover 
+{
+    background-color: rgba(250, 128, 114, 0.623);
+    
+}
+
+.tarefa
+{
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+
+    accent-color: black;
+}
+
+
+@media screen and (max-width:428px)
+{
+    .conteudo
+    {
+        border: none;
+        width: 90%;
+        margin: auto;
+        /* background: red; */
+    }
+
+    .item 
+    {
+        width: 90%;
+     
+    }
+    .lista
+    {
+        width: 90%;
+        /* background: blue; */
+    }
+    .texto
+    {
+        font-size: 1em;
+    }
+}

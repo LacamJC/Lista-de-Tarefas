@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="conteudo">
+        <h1>Lista de Tarefas</h1>
+        <textarea name="" id="tarefaDesc" cols="30" rows="10" onkeydown="verificar(event)"></textarea>
+        <input type="button" class="criarTarefa" value="Criar tarefa" onclick="tarefa()">
+        <div class="lista" id="lista">
+            <!-- <label class="item" id="tarefa'+NumTarefa+'" for="tarefa"><input type="checkbox" name="tarefa" id="tarefa" class="tarefa" onclick="concluir(this)"><p class="texto">kasdpokaoksdkopakopospkpkopokapkookpkopko</p></label> -->
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        var NumTarefa = 0;
+
+        function verificar()
+        {
+            if(event.keyCode === 13)
+            {
+                event.preventDefault();
+                if (document.getElementById("tarefaDesc").value.trim() != "")
+                {
+                    tarefa();
+                }
+            }
+        }
+
+
+        function tarefa()
+        {
+            NumTarefa += 1
+
+            let tarefa;
+            let descTarefa = document.getElementById("tarefaDesc").value;
+
+            if (document.getElementById("tarefaDesc").value.trim() != "")
+            {
+            
+
+                document.getElementById("lista").innerHTML += '<label class="item" id="tarefa'+NumTarefa+'" for="tarefa'+NumTarefa+'"><input type="checkbox" name="tarefa" id="tarefa" class="tarefa" onclick="concluir(this)"><p class="texto">'+descTarefa+'</p></label>';
+            }
+
+            document.getElementById("tarefaDesc").value = ""
+        }
+
+
+        function concluir(checkbox) 
+        {
+            var item = checkbox.parentNode;
+            item.classList.add("concluido");
+
+            // Adicionar animação personalizada durante o tempo de espera
+            item.style.transition = "opacity 0.6s, transform 0.8s, rotate 1s";
+            item.style.opacity = "0";
+            item.style.transform = "translateX(100%) scale(0.8) rotate(90deg)";
+
+
+            setTimeout(function (){ 
+                checkbox.parentNode.remove();
+            }, 1000)
+        }
+
+    </script>
+</body>
+</html>

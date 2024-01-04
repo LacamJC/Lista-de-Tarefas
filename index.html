@@ -12,7 +12,6 @@
         <textarea name="" id="tarefaDesc" cols="30" rows="10" onkeydown="verificar(event)"></textarea>
         <input type="button" class="criarTarefa" value="Criar tarefa" onclick="tarefa()">
         <div class="lista" id="lista">
-            <!-- <label class="item" id="tarefa'+NumTarefa+'" for="tarefa"><input type="checkbox" name="tarefa" id="tarefa" class="tarefa" onclick="concluir(this)"><p class="texto">kasdpokaoksdkopakopospkpkopokapkookpkopko</p></label> -->
         </div>
     </div>
     
@@ -58,9 +57,9 @@
             item.classList.add("concluido");
 
             // Adicionar animação personalizada durante o tempo de espera
-            item.style.transition = "opacity 0.6s, transform 0.8s, rotate 1s";
+            item.style.transition = "opacity 0.6s, transform 1s, rotate 1s";
             item.style.opacity = "0";
-            item.style.transform = "translateX(100%) scale(0.8) rotate(90deg)";
+            item.style.transform = "translateX(100%) scale(0.8)";
 
 
             setTimeout(function (){ 

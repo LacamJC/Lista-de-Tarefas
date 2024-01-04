@@ -13,6 +13,7 @@
 .conteudo
 {
     border: 1px solid black ;
+    border-radius: 15px;
 
     width: 400px;
     margin: 50px auto ;
